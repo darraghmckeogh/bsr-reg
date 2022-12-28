@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          We require 'papName', to have an onshore agent. As the address is offshore.
+        </p>
+      {% endset %}
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
+      <span class="govuk-caption-xl">The principal accountable person</span>
+
+      <h1 class="govuk-heading-xl">Name and address of those that can act for 'papName'</h1>
+
+      <p>The address must be in England or Wales.</p>
+
+      <form class="form" action="/questions/pap/pap-named-contact-offshore" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "papType name",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input",
+          id: "name",
+          name: "name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Search for an address",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input",
+          id: "postcode",
+          name: "postcode"
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Find address",
+          href: "#",
+          classes: "govuk-button--secondary"
+        }) }}
+
+        <p><a href="#">Find a postcode on Royal Mail's postcode finder</a></p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Enter address manually
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            {{ govukInput({
+              label: {
+                text: "Address line 1",
+                classes: "govuk-label--s"
+              },
+              id: "postcode",
+              name: "postcode"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Address line 2",
+                classes: "govuk-label--s"
+              },
+              id: "postcode",
+              name: "postcode"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Postcode",
+                classes: "govuk-label--s"
+              },
+              classes: "govuk-input--width-10",
+              id: "postcode",
+              name: "postcode"
+            }) }}
+
+          </div>
+        </details>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

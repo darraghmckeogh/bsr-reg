@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">The principal accountable person</span>
+
+      <h1 class="govuk-heading-xl">Who is the named contact at 'papName'?</h1>
+
+      <p>Name the person we should contact at 'papName'. They do not need to be an accountable person. But they should be able to answer any questions we may ask.</p>
+
+      <form class="form" action="/questions/pap/pap-named-contact" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% call govukFieldset({
+          legend: {
+          }
+        }) %}
+          {{ govukInput({
+            label: {
+              text: 'Full name',
+              classes: "govuk-label--s"
+            },
+            id: "address-line-1",
+            name: "address-line-1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Email address',
+              classes: "govuk-label--s"
+            },
+            id: "address-line-2",
+            name: "address-line-2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Telephone",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town"
+          }) }}
+          
+        {% endcall %}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Job role",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Director"
+            },
+            {
+              value: "scotland",
+              text: "Administrative or office worker"
+            },
+            {
+              value: "wales",
+              text: "Building or facilities manager"
+            },
+            {
+              value: "northern-ireland",
+              text: "Building safety director"
+            },
+            {
+              value: "northern-ireland",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
