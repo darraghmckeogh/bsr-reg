@@ -19,13 +19,13 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Accountability type
+            Type
           </dt>
           <dd class="govuk-summary-list__value">
-            Housing association
+            {{ data['pap-type'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-type">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -33,13 +33,16 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Prinicpal accountable person
+            Name and address
           </dt>
           <dd class="govuk-summary-list__value">
-            Leasons Choices
+            {{ data['pap-name'] }}
+            <br>{{ data['pap-address-line-1'] }}
+            <br>{{ data['pap-address-line-2'] }}
+            <br>{{ data['pap-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-name-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -47,16 +50,16 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Housing association name and address
+            Named contact name and address
           </dt>
           <dd class="govuk-summary-list__value">
-            Leasons Choice
-            <br>1 Smith Road
-            <br>Southampton
-            <br>SO40 2LP
+            {{ data['pap-named-contact-name'] }}
+            <br>{{ data['pap-named-contact-email'] }}
+            <br>{{ data['pap-named-contact-phone'] }}
+            <br>{{ data['pap-named-contact-role'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-named-contact">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -72,7 +75,7 @@
             <br>Surrounding landscape
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-common-parts">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -80,13 +83,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Does anyone have written authorisation to act for 'Leasons Choices'?
+            Does anyone have written authorisation to act for the principal accountable person?
           </dt>
           <dd class="govuk-summary-list__value">
             Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-authorisation">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -94,7 +97,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name and address of those that can act for 'Leasons Choices'
+            Name and address of those that can act for the principal acountable person
           </dt>
           <dd class="govuk-summary-list__value">
             ABC Ltd,
@@ -103,7 +106,7 @@
             <br>SO40 2LP
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-name-address-offshore">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -111,7 +114,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contact details of those that can act for 'Leasons Choices'
+            Contact details of those that can act for the principal accountable person
           </dt>
           <dd class="govuk-summary-list__value">
             Barry Jones
@@ -119,7 +122,7 @@
             <br>01234 567890
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/pap/pap-named-contact-offshore">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>

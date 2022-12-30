@@ -16,7 +16,7 @@
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
       {% set html %}
         <p class="govuk-notification-banner__heading">
-          We require 'papName', to have an onshore agent. As the address is offshore.
+          We require {{ data['pap-name'] }}, to have an onshore agent. As the address is offshore.
         </p>
       {% endset %}
       {{ govukNotificationBanner({
@@ -25,21 +25,19 @@
 
       <span class="govuk-caption-xl">The principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Name and address of those that can act for 'papName'</h1>
+      <h1 class="govuk-heading-xl">Name and address of those that can act for '{{ data['pap-name'] }}'</h1>
 
       <p>The address must be in England or Wales.</p>
 
       <form class="form" action="/questions/pap/pap-named-contact-offshore" method="post">
 
-        {{ govukInput({
-          label: {
-            text: "papType name",
-            classes: "govuk-label--s"
-          },
-          classes: "govuk-input",
-          id: "name",
-          name: "name"
-        }) }}
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+              Name
+            </label>
+          </h1>
+          <input class="govuk-input" id="act-for-pap-name" name="act-for-pap-name" type="text" value="{{ data['act-for-pap-name'] }}">
+        </div>
 
         {{ govukInput({
           label: {
@@ -47,8 +45,8 @@
             classes: "govuk-label--s"
           },
           classes: "govuk-input",
-          id: "postcode",
-          name: "postcode"
+          id: "act-for-pap-address-search",
+          name: "act-for-pap-address-search"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -73,8 +71,8 @@
                 text: "Address line 1",
                 classes: "govuk-label--s"
               },
-              id: "postcode",
-              name: "postcode"
+              id: "act-for-pap-address-line-1",
+              name: "act-for-pap-address-line-1"
             }) }}
 
             {{ govukInput({
@@ -82,8 +80,8 @@
                 text: "Address line 2",
                 classes: "govuk-label--s"
               },
-              id: "postcode",
-              name: "postcode"
+              id: "act-for-pap-address-line-2",
+              name: "act-for-pap-address-line-2"
             }) }}
 
             {{ govukInput({
@@ -92,8 +90,8 @@
                 classes: "govuk-label--s"
               },
               classes: "govuk-input--width-10",
-              id: "postcode",
-              name: "postcode"
+              id: "act-for-pap-postcode",
+              name: "act-for-pap-postcode"
             }) }}
 
           </div>

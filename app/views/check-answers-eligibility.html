@@ -22,10 +22,10 @@
             Number of floors
           </dt>
           <dd class="govuk-summary-list__value">
-            7
+            {{ data['number-of-floors'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/eligibility/floors-above">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -36,10 +36,10 @@
             Building height
           </dt>
           <dd class="govuk-summary-list__value">
-            18 metres
+            {{ data['height'] }} metres
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/eligibility/height">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -50,10 +50,10 @@
             Number of residential units
           </dt>
           <dd class="govuk-summary-list__value">
-            2
+            {{ data['number-of-residential-units'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/eligibility/residential-units">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -64,10 +64,10 @@
             Are people living in the building?
           </dt>
           <dd class="govuk-summary-list__value">
-            Yes
+            {{ data['are-people-living-in-the-building'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/eligibility/are-people-living-in-the-building">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -75,7 +75,7 @@
         </div>
       </dl>
 
-      <form action="/register-task-list-confirm" method="post" novalidate>
+      <form action="/eligibility-answer" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

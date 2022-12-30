@@ -26,8 +26,8 @@
 
         {% set otherHtml %}
         {{ govukInput({
-          id: "contact-by-email",
-          name: "contact-by-email",
+          id: "other-pap-type",
+          name: "other-pap-type",
           type: "text",
           spellcheck: false,
           label: {
@@ -37,7 +37,8 @@
         {% endset -%}
 
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "pap-type",
+          value: data['pap-type'],
           fieldset: {
             legend: {
               text: "The principle accountable person is a:",
@@ -47,7 +48,7 @@
           },
           items: [
             {
-              value: "building-owner-individual",
+              value: "Building owner (individual)",
               text: "Building owner (individual)"
             },
             {

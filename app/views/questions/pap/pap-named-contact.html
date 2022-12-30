@@ -15,11 +15,11 @@
 
       <span class="govuk-caption-xl">The principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Who is the named contact at 'papName'?</h1>
+      <h1 class="govuk-heading-xl">Who is the named contact at '{{ data['pap-name'] }}'?</h1>
 
-      <p>Name the person we should contact at 'papName'. They do not need to be an accountable person. But they should be able to answer any questions we may ask.</p>
+      <p>Name the person we should contact at '{{ data['pap-name'] }}'. They do not need to be an accountable person. But they should be able to answer any questions we may ask.</p>
 
-      <form class="form" action="/questions/pap/pap-named-contact" method="post">
+      <form class="form" action="/questions/pap/pap-common-parts" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -32,8 +32,8 @@
               text: 'Full name',
               classes: "govuk-label--s"
             },
-            id: "address-line-1",
-            name: "address-line-1"
+            id: "pap-named-contact-name",
+            name: "pap-named-contact-name"
           }) }}
 
           {{ govukInput({
@@ -41,8 +41,8 @@
               text: 'Email address',
               classes: "govuk-label--s"
             },
-            id: "address-line-2",
-            name: "address-line-2"
+            id: "pap-named-contact-email",
+            name: "pap-named-contact-email"
           }) }}
 
           {{ govukInput({
@@ -51,15 +51,15 @@
               classes: "govuk-label--s"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "address-town"
+            id: "pap-named-contact-phone",
+            name: "pap-named-contact-phone"
           }) }}
           
         {% endcall %}
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "pap-named-contact-role",
           fieldset: {
             legend: {
               text: "Job role",
@@ -69,23 +69,23 @@
           },
           items: [
             {
-              value: "england",
+              value: "Director",
               text: "Director"
             },
             {
-              value: "scotland",
+              value: "Administrative or office worker",
               text: "Administrative or office worker"
             },
             {
-              value: "wales",
+              value: "Building or facilities manager",
               text: "Building or facilities manager"
             },
             {
-              value: "northern-ireland",
+              value: "uilding safety director",
               text: "Building safety director"
             },
             {
-              value: "northern-ireland",
+              value: "Other",
               text: "Other"
             }
           ]

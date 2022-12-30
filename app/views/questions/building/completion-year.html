@@ -19,7 +19,8 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "completion-year",
+          value: data['completion-year'],
           fieldset: {
             legend: {
               text: "When was the building completed?",
@@ -29,39 +30,39 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Before 1955",
               text: "Before 1955"
             },
             {
-              value: "no",
+              value: "1955 to 1964",
               text: "1955 to 1964"
             },
             {
-              value: "yes",
+              value: "1965 to 1974",
               text: "1965 to 1974"
             },
             {
-              value: "no",
+              value: "1975 to 1984",
               text: "1975 to 1984"
             },
             {
-              value: "yes",
+              value: "1985 to 1994",
               text: "1985 to 1994"
             },
             {
-              value: "no",
+              value: "1995 to 2004",
               text: "1995 to 2004"
             },
             {
-              value: "no",
+              value: "2005 to 2014",
               text: "2005 to 2014"
             },
             {
-              value: "no",
+              value: "2015 to 2023",
               text: "2015 to 2023"
             },
             {
-              value: "no",
+              value: "Not yet completed",
               text: "Not yet completed"
             }
           ]

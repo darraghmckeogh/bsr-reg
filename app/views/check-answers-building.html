@@ -22,10 +22,10 @@
             Building name
           </dt>
           <dd class="govuk-summary-list__value">
-            Acme House
+            {{ data['building-name'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/building/name">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -36,10 +36,10 @@
             Is the building made up of more than 1 block?
           </dt>
           <dd class="govuk-summary-list__value">
-            No
+            {{ data['more-than-one-block'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/building/block-boolean">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -55,7 +55,7 @@
             <br>SW32 9KL
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/building/best-known-address">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -66,10 +66,14 @@
             Alternative name, address or postcode?
           </dt>
           <dd class="govuk-summary-list__value">
-            No
+            {{ data['other-name-address-postcode-boolean'] }}
+            <br>{{ data['other-building-name'] }}
+            <br>{{ data['other-address-line-1'] }}
+            <br>{{ data['other-address-line-2'] }}
+            <br>{{ data['other-postcode-manual'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/building/other-name-address-postcode-boolean">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -80,10 +84,10 @@
             Year of completion
           </dt>
           <dd class="govuk-summary-list__value">
-            1965 to 1974
+            {{ data['completion-year'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/questions/building/completion-year">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>

@@ -19,7 +19,8 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "acting-on-behalf-of-pap",
+          value: data['acting-on-behalf-of-pap'],
           fieldset: {
             legend: {
               text: "Are you acting on behalf of the principal accountable person?",
@@ -29,11 +30,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "No",
               text: "No"
             }
           ]

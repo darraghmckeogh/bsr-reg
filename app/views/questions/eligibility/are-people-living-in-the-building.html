@@ -19,7 +19,8 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "are-people-living-in-the-building",
+          value: data['are-people-living-in-the-building'],
           fieldset: {
             legend: {
               text: "Are people living in the building?",
@@ -29,18 +30,18 @@
           },
           items: [
             {
-              value: "england",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "scotland",
+              value: "No, but the building is ready for people to move in",
               text: "No, but the building is ready for people to move in",
               hint: {
                 text: "This could be if the building has been refurbished or is new."
               }
             },
             {
-              value: "wales",
+              value: "No and people will not be moving in",
               text: "No and people will not be moving in",
               hint: {
                 text: "This would be because everyone has moved out while it is being refurbished or because it is going to be demolished."

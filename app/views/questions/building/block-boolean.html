@@ -19,7 +19,8 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "more-than-one-block",
+          value: data['more-than-one-block'],
           fieldset: {
             legend: {
               text: "Is the building made up of more than 1 block?",
@@ -29,11 +30,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "No",
               text: "No"
             }
           ]
